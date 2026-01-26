@@ -22,6 +22,9 @@ connectDB();
 
 const app = express();
 
+// Trust proxy for rate limiting behind reverse proxy (Railway)
+app.set('trust proxy', 1);
+
 // Body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
