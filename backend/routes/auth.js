@@ -12,7 +12,7 @@ const { protect } = require('../middleware/auth');
 router.post(
   '/register',
   [
-    body('name').isString().isLength({ min: 2 }).withMessage('Name is required'),
+    body('name').isString().isLength({ min: 2 }).withMessage('Name must be at least 2 characters'),
     body('email').isEmail().withMessage('Valid email is required'),
     body('password').isLength({ min: 6 }).withMessage('Password must be at least 6 characters'),
   ],
